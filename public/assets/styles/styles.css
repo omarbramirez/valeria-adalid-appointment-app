@@ -1,0 +1,18 @@
+/*BASES*/
+@import url("bases/reset.css");
+@import url("bases/default.css");
+@import url("bases/header.css");
+@import url("bases/footer.css");
+
+/*VARIABLES*/
+@import url("variables/v-color.css");
+@import url("variables/v-typography.css");
+/*PAGES*/
+@import url("pages/index.css");
+@import url("pages/contact.css");
+
+/*RESPONSIVE*/
+@import url("bases/responsive.css");
+
+/*FONTS*/
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two&family=Montserrat:wght@300&display=swap");

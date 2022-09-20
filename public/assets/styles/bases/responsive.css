@@ -1,0 +1,278 @@
+
+
+@media (max-width: 900px){
+
+/*DEFAULT RESPONSIVE STYLES*/
+
+    .logo{
+      width: 80%;  
+    }
+
+    p,
+    a,
+    h1,
+    h2,
+    h3,
+    h4,
+    .button{
+      text-align: center !important;
+    }
+
+    p,
+    b,
+    .button{
+        font-size: var(--text-note);
+    }
+
+    .calltoaction-section01 p b{
+        margin: 0.5rem;
+    }
+
+    .calltoaction-section01 p b.fa-whatsapp{
+        display: block;
+        margin: 0 0.5rem 0 0;
+      }
+
+    .calltoaction-section01 p{
+        width: 100%;
+    }
+
+    #floating_icon{
+        font-size: 8vw;
+        width: 12vw;
+        height: 12vw;
+        top:85%;
+    }
+/*HEADER RESPONSIVE STYLES*/
+
+    #hamburger{
+        display: block;
+        text-align: right;
+        font-size: var(--text-display);
+        padding-right: 2rem;
+    }
+    .menu_options{
+        display: none;
+    }
+
+    ._menu_options{
+        display: none;
+        opacity: 0;
+        -webkit-transition: all 0.5s 0s ease;
+        -moz-transition: all 0.5s 0s ease;
+        -o-transition: all 0.5s 0s ease;
+        transition: all 0.5s 0s ease;
+    }
+    .m_activate {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        justify-content: space-around;
+        background-color: var(--primary);
+        padding: 5rem 0;
+        opacity: 1;
+    }
+
+    .m_activate ul{
+        display: flex;
+    }
+
+    ._menu_options li {
+        width: 100%;
+        margin: 0;
+        padding: 0.5rem 0;
+        text-align: center;
+    }
+
+    ._menu_options li:hover{
+        background-color: var(--graduation-3);
+    }
+
+    ._menu_options li a{
+        color: var(--white-1);
+    }
+
+    ._menu_options li a:hover{
+        color: var(--white-5);
+    }
+
+    ._menu_options .f_icon:hover{
+        background:none;
+    }
+    .fab{
+        font-size: var(--text-headline);
+        margin: 1rem;
+    }
+
+    .m_activate p{
+        text-align: center;
+    }
+
+/*SECTION 1 RESPONSIVE STYLES*/
+    
+    .main-slider{
+        justify-content: center !important;    
+    }
+
+    .services{
+        background-position: 22%;
+    }
+
+    .aboutme{
+        background-position: 30%;
+    }
+
+    .products{
+        background-position: 80%;
+    }
+
+    .btn-calltoaction{
+        margin: 1rem auto !important;
+    }
+
+/*SECTION 2 RESPONSIVE STYLES*/
+
+.section02{
+  padding-bottom: 10vh;  
+}
+
+.section02-flex{
+    flex-direction: column !important;
+}
+
+.calltoaction-section02{
+    width: auto;
+}
+
+.calltoaction-section02 div{
+    width: 60px;
+    height: 60px;
+    margin-top: -30px;
+}
+
+
+.calltoaction-section02 p{
+    margin: 5vh auto;
+}
+
+/*BANNER RESPONSIVE STYLES*/
+
+.banner{
+    flex-direction: column;
+    margin: 5vh auto;  
+    height: 70vh;
+    padding: 0;
+}
+
+.calltoaction{
+    width: 80%;
+}
+
+/*SECTION 3 RESPONSIVE STYLES*/
+
+.users{
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 90%;
+}
+
+.user{
+    margin: 1rem;
+}
+
+.review{
+    width: 90%;
+}
+
+.user_name{
+    text-align: center;
+}
+
+/*SECTION 4 RESPONSIVE STYLES*/
+
+.main_services-flex{
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+}
+
+.calltoaction-main_services{
+    width: auto;
+    margin-top: 60px;
+}
+
+.service-images{
+    max-height: none;
+    max-width: none;
+    width: auto;
+    height: 40vh;
+}
+
+.arrow{
+    display: block;
+    margin-left: 0;
+    margin: 0.5rem auto;
+}
+
+/*TESTIMONIALS*/
+
+.testimonial{
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 90%;
+    margin: 5rem auto;
+    margin-bottom: 5rem;
+}
+
+.video{
+    width: 90%;
+    height: 40vw;
+}
+.before_after .review {
+    width: 90%;
+}
+
+.wrap{
+    display: none;
+}
+
+#fb_video_wrapper{
+    display: none;
+}
+
+/**/
+
+.contact-content{
+    flex-direction: column;
+}
+
+.contact-calltoaction{
+    margin: 10% auto;
+    height: auto;
+}
+
+.contact-form,
+.contact-form form{
+    height: auto;
+}
+
+.contact-form form{
+    margin: 20% auto;
+}
+
+.contact-form, .contact-calltoaction {
+    width: 100%;
+}
+
+/*PRIVACY POLICY SECTION*/
+
+.content-privacypolicy{
+    margin: 3rem 2rem;
+  }
+
+}
+

@@ -1,0 +1,14 @@
+html {
+  /*FAMILIES*/
+  --font-1: "Montserrat", sans-serif;
+  --font-2: "Lobster Two", cursive;
+  /*FONTS*/
+  --text-note: clamp(0.9rem, 1.5vw, 1.3rem);
+  --text-base: clamp(1rem, 2.4vw, 1.4rem);
+  --text-subheader: clamp(1rem, 2.6vw, 1.8rem);
+  --text-title: clamp(1.2rem, 2.9vw, 2.6rem);
+  --text-headline: clamp(1.8rem, 5vw, 3rem);
+  --text-display: clamp(2rem, 8vw, 3.1rem);
+  /*MENU*/
+  --text-menu: clamp(0.9rem, 1.1vw, 1rem);
+}

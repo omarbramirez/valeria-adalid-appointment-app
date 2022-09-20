@@ -1,0 +1,58 @@
+footer {
+  grid-area: footer;
+  background-color: var(--graduation-4);
+  color: var(--white-5);
+  padding: 1% 6%;
+  clear: both;
+}
+
+footer ul {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0.5rem auto;
+  width: 50%;
+}
+
+footer p {
+  font-family: var(--font-1);
+  font-size: var(--text-note);
+  text-align: center;
+}
+
+
+.footer-link{
+  color: var(--white-4);
+  margin: auto;
+}
+
+.footer-link:hover{
+  color:var(--white-1)
+}
+
+.hide{
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  background-image: url(../../../icons.png);
+  background-size: cover;
+  margin: 5px;
+}
+
+.instagram {
+  background-position: 0;
+}
+
+.facebook {
+  background-position: 100% 0;
+}
+
+.tiktok {
+  background-position: 50% 0;
+}
