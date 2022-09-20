@@ -41,9 +41,21 @@ const eventCreator = require('./modules/event.js');
 // PAYMENT MODULE REQUEST
 const payment = require('./modules/payment.js');
 
-// app.get('/agenda-tu-consulta', (req, res) => {
 
-app.get('https://valeria-adalid-appointment-app.herokuapp.com', (req, res) => {
+app.get('/', (req, res, next) => {
+
+  res.status(200).json({
+    status: 'success',
+    data: {
+      name: 'name of your app',
+      version: '0.1.0'
+    }
+  });
+
+});
+
+
+app.get('/agenda-tu-consulta', (req, res) => {
 
   res.render('app', {
     activator: ' ',
