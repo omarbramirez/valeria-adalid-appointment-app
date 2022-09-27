@@ -39,7 +39,7 @@ var days = ['Domingo', 'Lunes', 'Martes', 'MiÃ©rcoles', 'Jueves', 'Viernes', 'SÃ
 var months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
 // IMPORT DATA TO GOOGLE CALENDAR
-exports.googleCalendarValidator = (event, startTime, endTime, response) => {
+exports.googleCalendarValidator = (event, startTime, endTime, response, service) => {
 
   calendar.freebusy.query(
     {
@@ -90,9 +90,9 @@ exports.googleCalendarValidator = (event, startTime, endTime, response) => {
           purchase_units: [{
             amount: {
               currency_code: 'MXN', //https://developer.paypal.com/docs/api/reference/currency-codes/
-              value: '2000'
+              value: service.price
             },
-            description: 'Washing Bar soap'
+            description: service.service
           }],
           application_context: {
             brand_name: `Nutriologadalid.com`,

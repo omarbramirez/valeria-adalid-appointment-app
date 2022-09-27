@@ -4,6 +4,10 @@ const googleCalendar = require('./google_calendar_api.js');
 var event;
 var eventStartTime;
 var eventEndTime;
+var service = {
+  service: 'Por definir',
+  price: '0'
+}
 
 exports.eventValidator = (req, res) => {
 
@@ -69,5 +73,10 @@ exports.eventCreator = (req, res) => {
     },
     colorId: 1
   };
-  googleCalendar.googleCalendarCreator(event, eventStartTime, eventEndTime, res);
+
+  service.service = req.body.service;
+  if (req.body.service === 'Primera Consulta - EN LÍNEA' || req.body.service === 'Primera Consulta - PRESENCIAL') service.price = '2500';
+  if ((req.body.service === 'Consulta de Seguimiento - EN LÍNEA' || req.body.service === 'Consulta de Seguimiento - PRESENCIAL')) service.price = '1500';
+
+  googleCalendar.googleCalendarCreator(event, eventStartTime, eventEndTime, res, service);
 };
