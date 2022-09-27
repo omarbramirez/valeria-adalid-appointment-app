@@ -11,7 +11,7 @@
                 <link rel="preconnect" href="https://fonts.googleapis.com">
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
                 <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&family=Montserrat:wght@300&display=swap" rel="stylesheet">
-                <script src="https://www.google.com/recaptcha/api.js?render=6LfN_nwhAAAAABJrm4Y_-dUPfK9ZM1_JKhCFpByK"></script>
+                <script src="https://www.google.com/recaptcha/api.js?render=6LdZNn0hAAAAAC4H5KGSRN3TGRov_E3CatMY89OO"></script>
                 
             </head>
             <body>
@@ -26,6 +26,7 @@
                             </span>
                             
                             <p class="popup_msg"> <%= msg1 %> <br> <%= msg2 %> </p>
+                            <a  class="popup_msg" href="https://valeria-adalid-appointment-app.herokuapp.com/">Volver al Inicio</a>
                             
                         </div>
 
@@ -72,67 +73,6 @@
 
 <div class="content contact-content"> 
 
-<div id="caldendar_section">
-
-    <iframe id="rendered_calendar" src="https://calendar.google.com/calendar/embed?wkst=2&bgcolor=%23d8df86&ctz=America%2FMexico_City&mode=MONTH&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0&src=MGE0ZHV1anNwZmVlNGl0ZGZndHRzMnNmaDBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%237986CB" frameborder="0" scrolling="no"></iframe>
-
-</div>
-
-
-                    <div class="contact-form" style="background-color: var(--graduation-3);" >
-                    <h4 style= "color: var(--white-5); margin:2rem auto; text-align: center;
-                    width: 90%;">Agenda tu Consulta en Línea desde mi Página</h4>
-
-                            <form id="appointment_form" action="/agenda-tu-consulta" method="post">
-
-                                 <!-- <form id="appointment_form"> -->
-                                <label for="service">Elije tu servicio</label>
-                                <select id ="service" name="service">
-                                    <option value="Primera Consulta - EN LÍNEA">Primera Consulta (Evaluación Clínica) - EN LÍNEA</option>
-                                    <option value="Consulta de Seguimiento - EN LÍNEA">Consulta de Seguimiento - EN LÍNEA</option>
-                                    <option value="Primera Consulta - PRESENCIAL">Primera Consulta (Evaluación Clínica)- PRESENCIAL</option>
-                                    <option value="Consulta de Seguimiento - PRESENCIAL">Consulta de Seguimiento - PRESENCIAL</option>
-                                    <option value="Otro">Otro (Escribe más detalles en la sección de 'Comentarios adicionales')</option>
-                                </select>
-                                <br>
-
-                                <input type="date" id="date" name="date"
-                                min="2022-01-01" max="2022-12-31" required>
-                                <br>
-
-                                <label for="hour">Hora</label>
-                                <select id="hour" name="hour" required>
-                                  <option value="09:00:00" selected>09:00 AM</option>
-                                  <option value="10:00:00">10:00 AM</option>
-                                  <option value="11:00:00">11:00 AM</option>
-                                  <option value="12:00:00">12:00 PM</option>
-                                  <option value="13:00:00">01:00 PM</option>
-                                  <option value="14:00:00">02:00 PM</option>
-                                  <option value="15:00:00">03:00 PM</option>
-                                  <option value="16:00:00">04:00 PM</option>
-                                  <option value="17:00:00">05:00 PM</option>
-                                  <option value="18:00:00">06:00 PM</option>
-                                  <option value="19:00:00">07:00 PM</option>
-                                </select>
-                                <br>
-
-                                <input type="text" placeholder="Nombre" maxlength="30" name="name"  id="name" />
-                                <br>
-
-                                <input type="email" placeholder="Correo" maxlength="40" name="email" id="email"  />
-                                <br>
-
-                                <input type="tel" placeholder="Teléfono (Opcional)" maxlength="15" name="number" id="number"/>
-                                <br>
-
-                                <textarea type="text" placeholder="Comentarios adicionales" maxlength="1000" name="comments" id="comments" ></textarea>
-                                <br>
-                                <!-- <input data-sitekey="6LdZNn0hAAAAAC4H5KGSRN3TGRov_E3CatMY89OO" data-callback="onSubmit" data-action="submit" type="submit" name="send" value="Enviar" id="send"/> -->
-                                
-                                
-                                <input data-action="submit" type="submit" name="send" value="Pagar con Paypal" id="send" style="background-color: var(--complementary-4); color: var(--complementary-2); max-width: none;"/>
-                                
-                                </form>
                 </div>
             </div>
             <footer id="footer">
