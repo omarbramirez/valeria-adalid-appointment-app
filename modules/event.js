@@ -39,7 +39,12 @@ exports.eventValidator = (req, res) => {
     },
     colorId: 1
   };
-  googleCalendar.googleCalendarValidator(event, eventStartTime, eventEndTime, response);
+
+  service.service = req.body.service;
+  if (req.body.service === 'Primera Consulta - EN LÍNEA' || req.body.service === 'Primera Consulta - PRESENCIAL') service.price = '2500';
+  if ((req.body.service === 'Consulta de Seguimiento - EN LÍNEA' || req.body.service === 'Consulta de Seguimiento - PRESENCIAL')) service.price = '1500';
+
+  googleCalendar.googleCalendarValidator(event, eventStartTime, eventEndTime, response, service);
 };
 
 
@@ -73,10 +78,6 @@ exports.eventCreator = (req, res) => {
     },
     colorId: 1
   };
-
-  service.service = req.body.service;
-  if (req.body.service === 'Primera Consulta - EN LÍNEA' || req.body.service === 'Primera Consulta - PRESENCIAL') service.price = '2500';
-  if ((req.body.service === 'Consulta de Seguimiento - EN LÍNEA' || req.body.service === 'Consulta de Seguimiento - PRESENCIAL')) service.price = '1500';
 
   googleCalendar.googleCalendarCreator(event, eventStartTime, eventEndTime, res, service);
 };
