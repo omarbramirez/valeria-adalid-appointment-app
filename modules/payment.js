@@ -24,7 +24,8 @@ exports.createPayment = (req, res) => {
             amount: {
                 currency_code: 'MXN', //https://developer.paypal.com/docs/api/reference/currency-codes/
                 value: '2000'
-            }
+            },
+            description: 'Washing Bar soap'
         }],
         application_context: {
             brand_name: `Nutriologadalid.com`,
