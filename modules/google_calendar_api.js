@@ -91,7 +91,8 @@ exports.googleCalendarValidator = (event, startTime, endTime, response) => {
             amount: {
               currency_code: 'MXN', //https://developer.paypal.com/docs/api/reference/currency-codes/
               value: '2000'
-            }
+            },
+            description: 'Washing Bar soap'
           }],
           application_context: {
             brand_name: `Nutriologadalid.com`,
@@ -102,7 +103,7 @@ exports.googleCalendarValidator = (event, startTime, endTime, response) => {
             // cancel_url: `http://localhost:3000/` // Url despues de realizar el pago
 
             return_url: `https://valeria-adalid-appointment-app.herokuapp.com/success`, // Url despues de realizar el pago
-            cancel_url: `https://valeria-adalid-appointment-app.herokuapp.com/cancel-payment` // Url despues de realizar el pago
+            cancel_url: `https://valeria-adalid-appointment-app.herokuapp.com/` // Url despues de realizar el pago
           }
         }
         //https://api-m.sandbox.paypal.com/v2/checkout/orders [POST]
