@@ -41,20 +41,6 @@ const eventCreator = require('./modules/event.js');
 // PAYMENT MODULE REQUEST
 const payment = require('./modules/payment.js');
 
-
-// app.get('/', (req, res, next) => {
-
-//   res.status(200).json({
-//     status: 'success',
-//     data: {
-//       name: 'name of your app',
-//       version: '0.1.0'
-//     }
-//   });
-
-// });
-
-
 app.get('/', (req, res) => {
 
   res.render('app', {
@@ -86,8 +72,8 @@ app.post('/agenda-tu-consulta',
 //PAYMENT VARIABLES
 const CLIENT = process.env.PAYMENT_ID;
 const SECRET = process.env.PAYMENT_SECRET;
-// const PAYPAL_API = 'https://api-m.sandbox.paypal.com'; // Live https://api-m.paypal.com
-const PAYPAL_API = 'https://api-m.paypal.com';
+const PAYPAL_API = 'https://api-m.sandbox.paypal.com'; // Live https://api-m.paypal.com
+// const PAYPAL_API = 'https://api-m.paypal.com';
 
 const auth = { user: CLIENT, pass: SECRET }
 
@@ -102,8 +88,6 @@ app.get('/success', (req, res) => {
     eventCreator.eventCreator(formData, res);
   })
 });
-
-// app.get('/success', (req, res) => googleCalendar.executePayment(req, res));
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {

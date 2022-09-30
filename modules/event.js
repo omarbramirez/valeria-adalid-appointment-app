@@ -11,20 +11,12 @@ var service = {
 
 exports.eventValidator = (req, res) => {
 
-  const response = res;
-
   eventStartTime = new Date(req.body.date + 'T' + req.body.hour);
   eventStartTime.toLocaleTimeString('es-MX');
 
-  // const eventStartTime = new Date();
-  // eventStartTime.toLocaleTimeString('es-MX');
   eventEndTime = new Date(req.body.date + 'T' + req.body.hour);
   eventEndTime.toLocaleTimeString('es-MX');
-  if (req.body.service === 'Primera Consulta (Evaluación Clínica)') {
-    eventEndTime.setMinutes(eventEndTime.getMinutes() + 90);
-  } else {
-    eventEndTime.setMinutes(eventEndTime.getMinutes() + 40);
-  }
+  eventEndTime.setMinutes(eventEndTime.getMinutes() + 60);
 
   event = {
     summary: `${req.body.service} con ${req.body.name}`,
@@ -41,29 +33,21 @@ exports.eventValidator = (req, res) => {
   };
 
   service.service = req.body.service;
-  if (req.body.service === 'Primera Consulta - EN LÍNEA' || req.body.service === 'Consulta de Seguimiento - EN LÍNEA') service.price = '550';
-  if (req.body.service === 'Primera Consulta - PRESENCIAL' || req.body.service === 'Consulta de Seguimiento - PRESENCIAL') service.price = '600';
+  if (req.body.service === 'Consulta - EN LÍNEA') service.price = '550';
+  if (req.body.service === 'Consulta - PRESENCIAL') service.price = '600';
   if (req.body.service === 'Test') service.price = '5';
-  googleCalendar.googleCalendarValidator(event, eventStartTime, eventEndTime, response, service);
+
+  googleCalendar.googleCalendarValidator(event, eventStartTime, eventEndTime, res, service);
 };
 
-
 exports.eventCreator = (req, res) => {
-
-  const response = res;
 
   eventStartTime = new Date(req.body.date + 'T' + req.body.hour);
   eventStartTime.toLocaleTimeString('es-MX');
 
-  // const eventStartTime = new Date();
-  // eventStartTime.toLocaleTimeString('es-MX');
   eventEndTime = new Date(req.body.date + 'T' + req.body.hour);
   eventEndTime.toLocaleTimeString('es-MX');
-  if (req.body.service === 'Primera Consulta (Evaluación Clínica)') {
-    eventEndTime.setMinutes(eventEndTime.getMinutes() + 90);
-  } else {
-    eventEndTime.setMinutes(eventEndTime.getMinutes() + 40);
-  }
+  eventEndTime.setMinutes(eventEndTime.getMinutes() + 60);
 
   event = {
     summary: `${req.body.service} con ${req.body.name}`,

@@ -62,6 +62,7 @@ exports.googleCalendarValidator = (event, startTime, endTime, response, service)
         });
         return console.error('Free Busy Error:'/*, err*/);
       };
+
       const eventsArr = res.data.calendars[calendarID].busy;
 
       ////////////////////////////////////////////////////////////////////////////////
