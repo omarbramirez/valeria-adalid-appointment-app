@@ -12,7 +12,7 @@ app.use(cors())
 const CLIENT = process.env.PAYMENT_ID;
 const SECRET = process.env.PAYMENT_SECRET;
 // const PAYPAL_API = 'https://api-m.sandbox.paypal.com'; // Live https://api-m.paypal.com
-const PAYPAL_API = 'https://api-m.paypal.com';
+const PAYPAL_API = 'https://www.paypal.com';
 
 const auth = { user: CLIENT, pass: SECRET }
 
