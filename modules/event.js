@@ -41,8 +41,9 @@ exports.eventValidator = (req, res) => {
   };
 
   service.service = req.body.service;
-  if (req.body.service === 'Primera Consulta - EN LÍNEA' || req.body.service === 'Primera Consulta - PRESENCIAL') service.price = '2500';
-  if ((req.body.service === 'Consulta de Seguimiento - EN LÍNEA' || req.body.service === 'Consulta de Seguimiento - PRESENCIAL')) service.price = '1500';
+  if (req.body.service === 'Primera Consulta - EN LÍNEA' || req.body.service === 'Consulta de Seguimiento - EN LÍNEA') service.price = '550';
+  if (req.body.service === 'Primera Consulta - PRESENCIAL' || req.body.service === 'Consulta de Seguimiento - PRESENCIAL') service.price = '600';
+  if (req.body.service === 'Test') service.price = '10';
 
   googleCalendar.googleCalendarValidator(event, eventStartTime, eventEndTime, response, service);
 };

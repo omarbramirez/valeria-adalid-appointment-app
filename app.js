@@ -86,7 +86,8 @@ app.post('/agenda-tu-consulta',
 //PAYMENT VARIABLES
 const CLIENT = process.env.PAYMENT_ID;
 const SECRET = process.env.PAYMENT_SECRET;
-const PAYPAL_API = 'https://api-m.sandbox.paypal.com'; // Live https://api-m.paypal.com
+// const PAYPAL_API = 'https://api-m.sandbox.paypal.com'; // Live https://api-m.paypal.com
+const PAYPAL_API = 'https://api-m.paypal.com';
 
 const auth = { user: CLIENT, pass: SECRET }
 
@@ -101,7 +102,6 @@ app.get('/success', (req, res) => {
     eventCreator.eventCreator(formData, res);
   })
 });
-
 
 // app.get('/success', (req, res) => googleCalendar.executePayment(req, res));
 
