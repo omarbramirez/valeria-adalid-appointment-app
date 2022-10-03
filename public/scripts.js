@@ -37,8 +37,10 @@ pickerDate.addEventListener('input', function (e) {
 const unavailableHours = ["16:00:00", "17:00:00", "18:00:00", "19:00:00"]
 
 pickerDate.addEventListener('input', function (e) {
+
     e.preventDefault();
     const day = new Date(this.value).getUTCDay();
+
     if (day === 6) {
         popupActivation();
         msg1.innerHTML = 'Los días sábados tienen únicamente estos horarios:';
@@ -52,7 +54,13 @@ pickerDate.addEventListener('input', function (e) {
                 n += 1;
             }
         })
+    } else {
+        for (let i = 0; i < hours.length; i++) {
+            const currentHour = hours[i];
+            currentHour.style.display = "block";
+        }
     }
+
 });
 
 
