@@ -4,6 +4,10 @@ const popupBackground = document.querySelector('#popup');
 const close_btn = document.querySelector('.popup_icon');
 const popup_box = document.querySelector('.popup_box');
 const popup_msg = document.querySelector('.popup_msg');
+const msg1 = document.getElementById('msg1');
+const msg2 = document.getElementById('msg2');
+const hours = document.getElementsByClassName('hour');
+const hourSelector = document.getElementById('');
 
 
 function popupActivation() {
@@ -17,13 +21,41 @@ function popupActivation() {
     };
 };
 
+//SUNDAY BANNING FUNCTION
 pickerDate.addEventListener('input', function (e) {
     e.preventDefault();
     const day = new Date(this.value).getUTCDay();
     if (!day) {
         popupActivation();
+        msg1.innerHTML = 'Los días domingos';
+        msg2.innerHTML = 'no están disponibles actualmente.';
     }
 });
+
+// SATURDAY ACTIVE HOURS CUSTOMIZING FUNCTION 
+
+const unavailableHours = ["16:00:00", "17:00:00", "18:00:00", "19:00:00"]
+
+pickerDate.addEventListener('input', function (e) {
+    e.preventDefault();
+    const day = new Date(this.value).getUTCDay();
+    if (day === 6) {
+        popupActivation();
+        msg1.innerHTML = 'Los días sábados tienen únicamente estos horarios:';
+        msg2.innerHTML = '11:00 AM a 3:00 PM';
+        console.log(hours);
+        let n = 5;
+        unavailableHours.map(hour => {
+            const currentHour = hours[n];
+            if (hour === currentHour.value) {
+                currentHour.style.display = "none";
+                n += 1;
+            }
+        })
+    }
+});
+
+
 
 close_btn.addEventListener('click', function (e) {
     e.preventDefault();

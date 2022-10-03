@@ -128,10 +128,9 @@ display: flex;
 
 .popup_wrap{
     font-size: 60px;
-margin: auto;
-padding-top: 20px;
-z-index: 1;
-cursor: pointer;
+    margin-bottom: 30px;
+    z-index: 1;
+    cursor: pointer;
 }
 
 .popup_icon{
@@ -148,11 +147,12 @@ display: flex;
 }
 
 .popup_msg{
-    padding-top: 20px;
-    height: 60%;
+    height: auto;
     text-align: center;
     font-size: 25px;
-    z-index:1;
+    z-index: 1;
+    margin: 0 auto;
+    padding: 0;
 }
 
 
