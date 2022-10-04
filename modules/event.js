@@ -47,8 +47,9 @@ exports.eventCreator = (req, res) => {
 
   eventEndTime = new Date(req.body.date + 'T' + req.body.hour);
   eventEndTime.toLocaleTimeString('es-MX');
-  eventEndTime.setMinutes(eventEndTime.getMinutes() + 60);
-
+  if (req.body.service === 'Consulta - EN LÍNEA') eventEndTime.setMinutes(eventEndTime.getMinutes() + 45);
+  /////////////////////////////////////////////////////////////////////////////////////
+  if (req.body.service === '') eventEndTime.setMinutes(eventEndTime.getMinutes() + 150);
   event = {
     summary: `${req.body.service} con ${req.body.name}`,
     description: `Teléfono: ${req.body.number}` + "\n" + `Comentarios adicionales: ${req.body.comments}`,
