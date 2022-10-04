@@ -148,7 +148,7 @@ exports.googleCalendarCreator = (event, startTime, endTime, response) => {
     },
     (err, res) => {
       const eventsArr = res.data.calendars[calendarID].busy;
-      if (eventsArr.length === 0) return calendar.events.insert({ calendarId: calendarID, resource: event },
+      return calendar.events.insert({ calendarId: calendarID, resource: event },
         err => {
           if (err) return console.error('Calendar event creating error:', err);
           const formData = JSON.parse(localStorage.getItem("formData"));

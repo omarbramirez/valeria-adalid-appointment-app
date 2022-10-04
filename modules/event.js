@@ -16,8 +16,9 @@ exports.eventValidator = (req, res) => {
 
   eventEndTime = new Date(req.body.date + 'T' + req.body.hour);
   eventEndTime.toLocaleTimeString('es-MX');
-  eventEndTime.setMinutes(eventEndTime.getMinutes() + 60);
-
+  if (req.body.service === 'Primera Consulta - EN LÍNEA' || req.body.service === 'Primera Consulta - PRESENCIAL') eventEndTime.setMinutes(eventEndTime.getMinutes() + 90);
+  if (req.body.service === 'Consulta de Seguimiento - EN LÍNEA' || req.body.service === 'Consulta de Seguimiento - PRESENCIAL') eventEndTime.setMinutes(eventEndTime.getMinutes() + 45);
+  if (req.body.service === 'true') eventEndTime.setMinutes(eventEndTime.getMinutes() + 60);
   event = {
     summary: `${req.body.service} con ${req.body.name}`,
     description: `Teléfono: ${req.body.number}` + "\n" + `Comentarios adicionales: ${req.body.comments}`,
@@ -33,8 +34,8 @@ exports.eventValidator = (req, res) => {
   };
 
   service.service = req.body.service;
-  if (req.body.service === 'Consulta - EN LÍNEA') service.price = '550';
-  if (req.body.service === 'Consulta - PRESENCIAL') service.price = '600';
+  if (req.body.service === 'Primera Consulta - EN LÍNEA' || req.body.service === 'Consulta de Seguimiento - EN LÍNEA') service.price = '550';
+  if (req.body.service === 'Primera Consulta - PRESENCIAL' || req.body.service === 'Consulta de Seguimiento - PRESENCIAL') service.price = '600';
   if (req.body.service === 'Test') service.price = '5';
 
   googleCalendar.googleCalendarValidator(event, eventStartTime, eventEndTime, res, service);
@@ -47,9 +48,8 @@ exports.eventCreator = (req, res) => {
 
   eventEndTime = new Date(req.body.date + 'T' + req.body.hour);
   eventEndTime.toLocaleTimeString('es-MX');
-  if (req.body.service === 'Consulta - EN LÍNEA') eventEndTime.setMinutes(eventEndTime.getMinutes() + 45);
-  /////////////////////////////////////////////////////////////////////////////////////
-  if (req.body.service === '') eventEndTime.setMinutes(eventEndTime.getMinutes() + 150);
+  if (req.body.service === 'Primera Consulta - EN LÍNEA' || req.body.service === 'Primera Consulta - PRESENCIAL') eventEndTime.setMinutes(eventEndTime.getMinutes() + 90);
+  if (req.body.service === 'Consulta de Seguimiento - EN LÍNEA' || req.body.service === 'Consulta de Seguimiento - PRESENCIAL') eventEndTime.setMinutes(eventEndTime.getMinutes() + 45);
   event = {
     summary: `${req.body.service} con ${req.body.name}`,
     description: `Teléfono: ${req.body.number}` + "\n" + `Comentarios adicionales: ${req.body.comments}`,
