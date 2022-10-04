@@ -11,8 +11,8 @@ app.use(cors())
 //PAYMENT VARIABLES
 const CLIENT = process.env.PAYMENT_ID;
 const SECRET = process.env.PAYMENT_SECRET;
-const PAYPAL_API = 'https://api-m.sandbox.paypal.com'; // Live https://api-m.paypal.com
-// const PAYPAL_API = 'https://api-m.paypal.com';
+// const PAYPAL_API = 'https://api-m.sandbox.paypal.com'; // Live https://api-m.paypal.com
+const PAYPAL_API = 'https://api-m.paypal.com';
 
 const auth = { user: CLIENT, pass: SECRET }
 
@@ -32,11 +32,11 @@ exports.createPayment = (req, res) => {
             brand_name: `Nutriologadalid.com`,
             landing_page: 'NO_PREFERENCE', // Default, para mas informacion https://developer.paypal.com/docs/api/orders/v2/#definition-order_application_context
             user_action: 'PAY_NOW', // Accion para que en paypal muestre el monto del pago
-            return_url: `http://localhost:3000/success`, // Url despues de realizar el pago
-            cancel_url: `http://localhost:3000/cancel-paymen` // Url despues de realizar el pago
+            // return_url: `http://localhost:3000/success`, // Url despues de realizar el pago
+            // cancel_url: `http://localhost:3000/cancel-paymen` // Url despues de realizar el pago
 
-            // return_url: `https://valeria-adalid-appointment-app.herokuapp.com/success`, // Url despues de realizar el pago
-            // cancel_url: `https://valeria-adalid-appointment-app.herokuapp.com/` // Url despues de realizar el pago
+            return_url: `https://valeria-adalid-appointment-app.herokuapp.com/success`, // Url despues de realizar el pago
+            cancel_url: `https://valeria-adalid-appointment-app.herokuapp.com/` // Url despues de realizar el pago
         }
     }
     //https://api-m.sandbox.paypal.com/v2/checkout/orders [POST]
