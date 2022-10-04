@@ -18,7 +18,7 @@ exports.eventValidator = (req, res) => {
   eventEndTime.toLocaleTimeString('es-MX');
   if (req.body.service === 'Primera Consulta - EN LÍNEA' || req.body.service === 'Primera Consulta - PRESENCIAL') eventEndTime.setMinutes(eventEndTime.getMinutes() + 90);
   if (req.body.service === 'Consulta de Seguimiento - EN LÍNEA' || req.body.service === 'Consulta de Seguimiento - PRESENCIAL') eventEndTime.setMinutes(eventEndTime.getMinutes() + 45);
-  if (req.body.service === 'true') eventEndTime.setMinutes(eventEndTime.getMinutes() + 60);
+  if (req.body.service === 'Test') eventEndTime.setMinutes(eventEndTime.getMinutes() + 60);
   event = {
     summary: `${req.body.service} con ${req.body.name}`,
     description: `Teléfono: ${req.body.number}` + "\n" + `Comentarios adicionales: ${req.body.comments}`,
