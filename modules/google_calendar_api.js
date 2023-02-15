@@ -115,6 +115,7 @@ exports.googleCalendarValidator = (event, startTime, endTime, response, service)
           body,
           json: true
         }, (err, response) => {
+          console.log(auth);
           res.json({ data: response.body });
 //           res.redirect(response.body.links[1].href);
         })
