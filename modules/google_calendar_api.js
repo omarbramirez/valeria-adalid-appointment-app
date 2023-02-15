@@ -104,8 +104,8 @@ exports.googleCalendarValidator = (event, startTime, endTime, response, service)
             // return_url: `http://localhost:3000/success`, // Url despues de realizar el pago
             // cancel_url: `http://localhost:3000/` // Url despues de realizar el pago
 
-            return_url: `https://valeria-adalid-appointment-app.herokuapp.com/success`, // Url despues de realizar el pago
-            cancel_url: `https://valeria-adalid-appointment-app.herokuapp.com/` // Url despues de realizar el pago
+            return_url: `https://valeria-adalid-appointment.up.railway.app/success`, // Url despues de realizar el pago
+            cancel_url: `https://valeria-adalid-appointment.up.railway.app/` // Url despues de realizar el pago
           }
         }
         //https://api-m.sandbox.paypal.com/v2/checkout/orders [POST]
