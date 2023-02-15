@@ -37,8 +37,8 @@ exports.eventValidator = (req, res) => {
   if (req.body.service === 'Primera Consulta - EN LÍNEA' || req.body.service === 'Consulta de Seguimiento - EN LÍNEA') service.price = '550';
   if (req.body.service === 'Primera Consulta - PRESENCIAL' || req.body.service === 'Consulta de Seguimiento - PRESENCIAL') service.price = '600';
   if (req.body.service === 'Test') service.price = '5';
-console.log(res);
-//   googleCalendar.googleCalendarValidator(event, eventStartTime, eventEndTime, res, service);
+// console.log(res);
+  googleCalendar.googleCalendarValidator(event, eventStartTime, eventEndTime, res, service);
 };
 
 exports.eventCreator = (req, res) => {
