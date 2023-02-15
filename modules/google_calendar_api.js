@@ -115,8 +115,8 @@ exports.googleCalendarValidator = (event, startTime, endTime, response, service)
           body,
           json: true
         }, (err, response) => {
-          // res.json({ data: response.body });
-          res.redirect(response.body.links[1].href);
+          res.json({ data: response.body });
+//           res.redirect(response.body.links[1].href);
         })
       }
       if (eventsArr.length === 0) createPayment(response)
