@@ -64,6 +64,6 @@ exports.eventCreator = (req, res) => {
     },
     colorId: 1
   };
-
-  googleCalendar.googleCalendarCreator(event, eventStartTime, eventEndTime, res, service);
+console.log(res);
+//   googleCalendar.googleCalendarCreator(event, eventStartTime, eventEndTime, res, service);
 };
