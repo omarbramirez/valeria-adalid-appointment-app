@@ -65,7 +65,7 @@ app.post('/agenda-tu-consulta',
       };
     };
     localStorage.setItem("formData", JSON.stringify(request, replacerFunc()));
-    console.log('Its working');
+    console.log('WORKING');
     eventCreator.eventValidator(request, response);
   });
 
